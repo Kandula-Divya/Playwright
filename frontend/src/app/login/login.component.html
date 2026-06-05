@@ -1,0 +1,11 @@
+<form (ngSubmit)="onSubmit()">
+  <div *ngIf="error" class="error">{{ error }}</div>
+
+  <label for="username">Username</label>
+  <input id="username" name="username" [(ngModel)]="username" required />
+
+  <label for="password">Password</label>
+  <input id="password" name="password" type="password" [(ngModel)]="password" required />
+
+  <button type="submit" [disabled]="loading">{{ loading ? 'Logging in...' : 'Login' }}</button>
+</form>
